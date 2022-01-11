@@ -1,6 +1,5 @@
-// import ReactDOM from 'react-dom';
 import styles from './Modal.module.css';
-import { Modal as ModalUI, Button } from "@mui/material";
+import { Button } from "@mui/material";
 
 
 

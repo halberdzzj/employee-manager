@@ -11,26 +11,22 @@ const dataInLocalStorage = localStorage.getItem('data');
 
 const dataJSON = JSON.parse(dataInLocalStorage);
 
-// to create a new array/object, not to mutate the original array/object !!!!!!!!!!!!!!
 const employeeReducer = (state = { employees: dataJSON ? dataJSON.employees : [] }, action) => {
   let result;
   switch (action.type) {
     case ACTION_TYPE.INIT:
-      // if(localStorage.getItem('data')) 
 
       result = { employees: action.data };
-      // localStorage.setItem('data',)
       break;
     case ACTION_TYPE.ADD_EMPLOYEE:
       result = { employees: [action.newEmployee, ...state.employees] };
-      // action contains the user object
+      // action contains the employee object
       break;
     case ACTION_TYPE.REMOVE_EMPLOYEE:
-      // action contains the user id
+      // action contains the employee id
       const updatedList = state.employees.filter(e => e.id.toString() !== action.id.toString())
       console.log(state.employees)
       result = { employees: updatedList }
-      // result = { result: "remove" };
       break;
     case ACTION_TYPE.EDIT_EMPLOYEE:
       const editedEmployee = action.employee;
@@ -42,9 +38,7 @@ const employeeReducer = (state = { employees: dataJSON ? dataJSON.employees : []
           return e;
         }
       });
-
       result = { employees: editedEmployeeList };
-      // action contains the user id
       break;
     default:
       result = { employees: state.employees };

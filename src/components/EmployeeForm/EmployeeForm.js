@@ -1,5 +1,5 @@
 import MyInput from '../UI/Input'
-import { Button, FormLabel, RadioGroup, FormControl, FormControlLabel, Radio, InputLabel } from "@mui/material";
+import { Button, FormLabel, RadioGroup, FormControlLabel, Radio, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -58,7 +58,7 @@ const EmployeeForm = (props) => {
             return;
         }
 
-        if (!+phoneVal.match(/65[6|8|9]\d{7}/)) {
+        if (!+phoneVal.match(/65[6|8|9]\d{7}/) || phoneVal.length !== 10) {
             setPhoneIsValid(false)
             return
         }
@@ -136,7 +136,7 @@ const EmployeeForm = (props) => {
                     <FormControlLabel value="male" control={<Radio />} label="Male" />
                 </RadioGroup>
                 {!genderIsValid && <InputLabel className={styles['invalid-label']}>Please select gender.</InputLabel> }</div>
-            <Button className={styles['form-control']} className={styles.button} type="submit" variant="contained">Submit</Button>
+            <Button className={`${styles.button} ${styles['form-control']}`} type="submit" variant="contained">Submit</Button>
         </form>
     )
 }

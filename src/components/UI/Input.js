@@ -1,9 +1,8 @@
 import { InputLabel, Input as InputUI } from "@mui/material";
-import React, { useState, useImperativeHandle, useRef } from "react";
+import React, { useRef } from "react";
 import styles from './Input.module.css'
 
 const MyInput = (props) => {
-    // const [isValid, setIsValid] = useState(true);
     const inputRef = useRef()
 
     const WARNING_MSG = {

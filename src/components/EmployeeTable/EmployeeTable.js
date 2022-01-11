@@ -1,7 +1,7 @@
-import { AgGridReact, AgGridColumn } from "ag-grid-react";
+import { AgGridReact  } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-balham.css";
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { fetchEmployees } from "../../services/api-service";
 import { useSelector, useDispatch } from "react-redux";
 import { ACTION_TYPE } from "../../store/state-manager";
@@ -28,9 +28,7 @@ const EmployeeTable = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [rowFocused, setRowFocused] = useState(null);
 
-  // useEffect(() => {
 
-  // }, [rowFocused])
 
   const columnDefs = [
     { headerName: "First Name", field: "firstName", resizable: true },
@@ -62,9 +60,7 @@ const EmployeeTable = () => {
   ];
 
   const deleteHandler = () => {
-    console.log('confirm')
 
-    //////////////
     dispatch({ type: ACTION_TYPE.REMOVE_EMPLOYEE, id: rowFocused.id })
 
     setModalOpen(false)
@@ -79,7 +75,6 @@ const EmployeeTable = () => {
   }
 
   return (
-    // <div>hello</div>
     <Fragment>
       {modalOpen && <Modal onConfirmDelete={deleteHandler} onCloseModal={closeModalHandler} employee={rowFocused} />}
       <div className="ag-theme-balham" >
