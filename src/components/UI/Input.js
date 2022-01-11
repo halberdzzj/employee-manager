@@ -16,7 +16,7 @@ const MyInput = (props) => {
         <div className={styles['form-control']}>
             <InputLabel htmlFor={props.inputId}>{props.label}</InputLabel>
             <InputUI className={props.isValid ? '' : styles.invalid} style={{ width: '100%' }} ref={inputRef} id={props.inputId} type={props.inputType} value={props.value} onChange={props.onChange} />
-            {!props.isValid && <InputLabel className={styles['invalid-label']}>{WARNING_MSG[props.inputId]}</InputLabel>}
+            {!props.isValid && <label className={styles['invalid-label']}>{WARNING_MSG[props.inputId]}</label>}
         </div>
     )
 }

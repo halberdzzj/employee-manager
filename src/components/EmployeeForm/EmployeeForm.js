@@ -135,7 +135,7 @@ const EmployeeForm = (props) => {
                     <FormControlLabel value="female" control={<Radio />} label="Female" />
                     <FormControlLabel value="male" control={<Radio />} label="Male" />
                 </RadioGroup>
-                {!genderIsValid && <InputLabel className={styles['invalid-label']}>Please select gender.</InputLabel> }</div>
+                {!genderIsValid && <label className={styles['invalid-label']}>Please select gender.</label> }</div>
             <Button className={`${styles.button} ${styles['form-control']}`} type="submit" variant="contained">Submit</Button>
         </form>
     )
