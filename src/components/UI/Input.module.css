@@ -1,0 +1,15 @@
+.form-control{
+    margin-top: 10px;
+}
+
+
+
+.invalid{
+    border: 1px red solid;
+    background-color: salmon;
+}
+
+.invalid-label{
+    color: red;
+    font-weight: bold;
+}
